@@ -29,8 +29,8 @@ void setup() {
   Serial.begin(115200);
   delay(1000);
   
-  Serial.println("ESP32-C3 Dual UART Web Server started");
-  Serial.println("Device1: GPIO20, Device2: GPIO7");
+  Serial.println("ESP32-C3 Dual UART Web Server");
+  Serial.println("Device 1: GPIO 20 - Device 2: GPIO 7");
   Serial.println("================================");
   
   // Init UART1 and UART2
@@ -201,7 +201,7 @@ void handleRoot() {
   html += "}";
   html += "function clearData() {";
   html += "  fetch('/clear').then(() => {";
-  html += "    document.getElementById('terminal').innerHTML = 'Buffer limpiado...';";
+  html += "    document.getElementById('terminal').innerHTML = 'Buffer Cleared...';";
   html += "    setTimeout(updateData, 500);";
   html += "  });";
   html += "}";
@@ -209,7 +209,7 @@ void handleRoot() {
   html += "  var select = document.getElementById('baudSelect1');";
   html += "  var newBaud = select.value;";
   html += "  fetch('/setBaud1?baud=' + newBaud).then(() => {";
-  html += "    document.getElementById('terminal').innerHTML = '<span style=\"color: #00ff00\">[Device1] Baudrate cambiado a ' + newBaud + ' - Reiniciando UART...</span>\\n';";
+  html += "    document.getElementById('terminal').innerHTML = '<span style=\"color: #00ff00\">[Device1] Baudrate changed to ' + newBaud + ' - Restarting UART...</span>\\n';";
   html += "    setTimeout(updateData, 1000);";
   html += "  });";
   html += "}";
@@ -217,7 +217,7 @@ void handleRoot() {
   html += "  var select = document.getElementById('baudSelect2');";
   html += "  var newBaud = select.value;";
   html += "  fetch('/setBaud2?baud=' + newBaud).then(() => {";
-  html += "    document.getElementById('terminal').innerHTML = '<span style=\"color: #00ffff\">[Device2] Baudrate cambiado a ' + newBaud + ' - Reiniciando UART...</span>\\n';";
+  html += "    document.getElementById('terminal').innerHTML = '<span style=\"color: #00ffff\">[Device2] Baudrate changed to ' + newBaud + ' - Restarting UART...</span>\\n';";
   html += "    setTimeout(updateData, 1000);";
   html += "  });";
   html += "}";
