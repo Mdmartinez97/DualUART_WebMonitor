@@ -16,6 +16,7 @@ A serial monitor with real-time web interaction to read UART data from up to two
 
 ## 🚗 Hardware
  The project was developed on an ESP32 C3 Mini, but a wide variety of microcontrollers can be used.
+👉 [Datasheet](https://michiel.vanderwulp.be/domotica/Modules/ESP32-C3-SuperMini/)
 
 ## 🛠️ Initial Setup
 
