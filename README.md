@@ -112,8 +112,8 @@ const int MAX_BUFFER_SIZE = 20000; // Change as needed
 
 ## 👤 Author
 - 📧 Email: marcosmartinez.bo@gmail.com
-- 🐛 [Open an Issue](https://github.com/tu-usuario/dual-uart-monitor/issues)
-- 💬 [Discussions](https://github.com/tu-usuario/dual-uart-monitor/discussions)
+- 🐛 [Open an Issue](https://github.com/Mdmartinez97/DualUART_WebMonitor/issues)
+- 💬 [Discussions](https://github.com/Mdmartinez97/DualUART_WebMonitor/discussions)
 
 
 ---
