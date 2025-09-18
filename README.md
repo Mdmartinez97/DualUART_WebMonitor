@@ -12,13 +12,8 @@ Un monitor serie con interaz web en tiempo real para leer datos UART de hasta do
 - 🔄 **Actualización automática** - Datos en tiempo real cada segundo
 
 ## 🎯 Vista Previa
+![Image](/Capture.JPG)
 
-```
-[15s] [Device1] Temperatura: 25.3°C      <- En verde
-[16s] [Device2] Humedad: 67%             <- En cian  
-[17s] [Device1] Presión: 1013 hPa        <- En verde
-[18s] [Device2] CO2: 420 ppm             <- En cian
-```
 
 ## 🛠️ Hardware Requerido
 
