@@ -21,7 +21,7 @@ String lastData1 = "";
 String lastData2 = "";
 const int MAX_BUFFER_SIZE = 20000;
 
-// Baudrates config
+// Initial Baudrates
 long currentBaudRate1 = 115200;
 long currentBaudRate2 = 115200;
 
@@ -105,7 +105,7 @@ void initUART() {
 void readUARTData() {
   uint8_t data[BUF_SIZE];
   
-  // Read Device 1 (GPIO20)
+  // Read Device 1
   int len1 = uart_read_bytes(UART_DEVICE1, data, BUF_SIZE - 1, 10 / portTICK_PERIOD_MS);
   if (len1 > 0) {
     data[len1] = 0;
@@ -127,12 +127,12 @@ void readUARTData() {
         }
       }
       
-      //Serial.print("[Device1-GPIO20]: ");
+      //Serial.print("[Device 1]: ");
       //Serial.println(newData1);
     }
   }
   
-  // Read Device 2 (GPIO7)
+  // Read Device 2
   int len2 = uart_read_bytes(UART_DEVICE2, data, BUF_SIZE - 1, 10 / portTICK_PERIOD_MS);
   if (len2 > 0) {
     data[len2] = 0;
@@ -154,7 +154,7 @@ void readUARTData() {
         }
       }
       
-      //Serial.print("[Device2-GPIO7]: ");
+      //Serial.print("[Device 2]: ");
       //Serial.println(newData2);
     }
   }
