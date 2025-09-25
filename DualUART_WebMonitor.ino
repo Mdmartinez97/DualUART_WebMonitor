@@ -3,8 +3,8 @@
 #include "driver/uart.h"
 
 // Wi-Fi config
-const char* ssid = "SSID";
-const char* password = "PASSWORD";
+const char* ssid = "SamsungArg";
+const char* password = "choripan";
 
 WebServer server(80);
 
@@ -14,6 +14,7 @@ WebServer server(80);
 #define RX_PIN_DEVICE1 20  // GPIO20 (UART 1)
 #define RX_PIN_DEVICE2 7   // GPIO7 (UART 2)
 #define BUF_SIZE 1024
+#define LED_BLUE 8
 
 // Buffers
 String uartBuffer = "";
@@ -26,6 +27,8 @@ long currentBaudRate1 = 115200;
 long currentBaudRate2 = 115200;
 
 void setup() {
+  pinMode(LED_BLUE, OUTPUT);
+  digitalWrite(LED_BLUE, HIGH); //Turn OFF
   Serial.begin(115200);
   delay(1000);
   
@@ -44,7 +47,7 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-  
+  digitalWrite(LED_BLUE, LOW);
   Serial.println();
   Serial.println("WiFi connected");
   Serial.print("IP address: ");
@@ -170,7 +173,7 @@ void handleRoot() {
   html += "* { margin: 0; padding: 0; box-sizing: border-box; }";
   html += "body { font-family: Arial, sans-serif; background-color: #000; color: #fff; height: 100vh; display: flex; flex-direction: column; }";
   html += ".header { padding: 15px 20px; background-color: #333; border-bottom: 2px solid #555; }";
-  html += ".title { color: white; text-align: center; margin-bottom: 15px; font-size: 34px; font-weight: bold; }";
+  html += ".title { color: white; text-align: center; margin-bottom: 15px; font-size: 24px; font-weight: bold; }";
   html += ".controls { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }";
   html += ".device-controls { display: flex; align-items: center; gap: 10px; padding: 10px; background-color: #444; border-radius: 5px; }";
   html += ".device-label { font-weight: bold; color: #fff; min-width: 80px; }";
